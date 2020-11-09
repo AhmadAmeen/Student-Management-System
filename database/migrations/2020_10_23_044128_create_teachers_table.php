@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateTeachersTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('teachers', function (Blueprint $table) {
+          $table->id();
+          $table->string('tname');
+          $table->string('classes');
+          $table->string('courses');
+          $table->string('iscoordinator');
+          $table->string('disp_coordinator');
+          $table->string('phno');
+          $table->string('email');
+          $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('teachers');
+    }
+}
